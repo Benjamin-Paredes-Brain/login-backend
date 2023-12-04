@@ -1,0 +1,24 @@
+<div>
+    {{#if user}}
+    <p>Actualmente haz iniciado sesión como {{user.name}}, necesitas salir antes de ingresar con un usuario diferente
+    </p>
+    <button id="logout">logout</button>
+    {{else}}
+    <h2>Iniciar Sesión</h2>
+    <form id="loginForm" class="form_container">
+        <input class="form_input" name="email" type="text" placeholder="ingrese su email">
+        <input class="form_input" type="password" name="password" placeholder="ingrese su contraseña">
+        <input class="form_input" type="submit">
+    </form>
+    <hr>
+    <div>
+        <a href="/api/sessions/github"><button class="form_input">Entrar con github</button></a>
+    </div>
+    <hr>
+    <p>Haz olvidado tu contraseña? <a href="/restartPassword">Reiniciar contraseña</a></p>
+    <p>¿No estás registrado? <a href="/register">Regístrate aquí</a></p>
+    {{/if}}
+</div>
+
+<script src="/js/login.js"></script>
+<script src="/js/logout.js"></script>
